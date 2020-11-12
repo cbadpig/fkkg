@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+    <title>item V</title>
+    <script type="text/javascript">          $(document).ready(function () {
+        $('#I-V').item({itemtype: 'composite'}, 'V');
+    });
+    document.oncontextmenu = function (e) {
+        {
+            return false;
+        }
+    }    </script>
+</head>
+<body onload="boxresize();">
+<div class="paperTitle">
+    <li class="single">试卷</li>
+    <li><a target="_self" id="mark" href="javascript:void(0)" onclick="ITEM.mark.ColorizeSelection('yellow');">标记题干</a>
+        <a target="_self" id="unmark" href="javascript:void(0)"
+           onclick="ITEM.mark.ColorizeSelection('#DDEBF6')">取消标记</a></li>
+</div>
+<div class="itemGroupTitle"> 三、不定项选择题。每题所设选项中至少有一个正确答案，多选、少选、错选或不选均不得分。本部分含86—100题，每题2分，共30分。</div>
+<div id="I-V" class="itemArea"><p>第 97-100 题</p>
+    <div id="itembox">
+        <div id="leftbox">
+            市工商局认定豪美公司的行为符合《广告法》第28条第2款第2项规定的“商品或者服务有关的允诺等信息与实际情况不符，对购买行为有实质性影响”情形，属发布虚假广告，予以行政处罚。豪美公司向省工商局申请行政复议，省工商局受理。请回答第97—100题。
+        </div>
+        <div id="boxline"></div>
+        <div id="rightbox">
+            
+            <div id="I-99" class="itemArea">
+                <script type="text/javascript">            $(document).ready(function () {
+                    $('#I-99').item({itemtype: 'smultiple'}, '99');
+                });        </script>
+                <div class="itemContext">
+                    <div class="labelClss"><span class="itemName">99.</span>
+                        如省工商局在复议时认定，豪美公司的行为符合《广告法》第28条第2款第4项规定的“虚构使用商品或者接受服务的效果”情形，亦属发布虚假广告，在改变处罚依据后维持了原处罚决定。公司不服起诉。下列说法正确的是：<span
+                                class="itemChoice">&nbsp;</span></div>
+                </div>
+                <div class="choiceList">
+                    <div class="choiceContext">
+                        <div class="labelClss">
+                            <div style="float:left;"><input type="checkbox" name="item-99" value="1"/> <span
+                                    class="choiceTitle">A.</span></div>
+                            <div style="margin-left:54px;line-height:120%"><span>被告为市工商局和省工商局</span></div>
+                        </div>
+                    </div>
+                    <div class="choiceContext">
+                        <div class="labelClss">
+                            <div style="float:left;"><input type="checkbox" name="item-99" value="2"/> <span
+                                    class="choiceTitle">B.</span></div>
+                            <div style="margin-left:54px;line-height:120%"><span>被告为省工商局</span></div>
+                        </div>
+                    </div>
+                    <div class="choiceContext">
+                        <div class="labelClss">
+                            <div style="float:left;"><input type="checkbox" name="item-99" value="4"/> <span
+                                    class="choiceTitle">C.</span></div>
+                            <div style="margin-left:54px;line-height:120%"><span>市工商局所在地的法院对本案有管辖权</span></div>
+                        </div>
+                    </div>
+                    <div class="choiceContext">
+                        <div class="labelClss">
+                            <div style="float:left;"><input type="checkbox" name="item-99" value="8"/> <span
+                                    class="choiceTitle">D.</span></div>
+                            <div style="margin-left:54px;line-height:120%"><span>省工商局所在地的法院对本案无管辖权</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<script type="text/javascript">    function boxresize() {
+    var oBox = document.getElementById("itembox"), oLeft = document.getElementById("leftbox"),
+        oRight = document.getElementById("rightbox"), oLine = document.getElementById("boxline");
+    oLine.onmousedown = function (e) {
+        var disX = (e || event).clientX;
+        oLine.left = oLine.offsetLeft;
+        document.onmousemove = function (e) {
+            var iT = oLine.left + ((e || event).clientX - disX);
+            if (iT > 900) {
+                return false;
+            }
+            if (iT < 200) {
+                return false;
+            }
+            var e = e || window.event, tarnameb = e.target || e.srcElement;
+            var maxT = oBox.clientWight - oLine.offsetWidth;
+            oLine.style.margin = 0;
+            iT < 0 && (iT = 0);
+            iT > maxT && (iT = maxT);
+            var or = oBox.clientWidth - iT;
+            if (or > 100) {
+                oLine.style.left = oLeft.style.width = iT + "px";
+                oRight.style.width = oBox.clientWidth - iT + "px";
+            }
+            return false;
+        };
+        document.onmouseup = function () {
+            document.onmousemove = null;
+            document.onmouseup = null;
+            oLine.releaseCapture && oLine.releaseCapture()
+        };
+        oLine.setCapture && oLine.setCapture();
+        return false;
+    };
+}  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+    <title>item II</title>
+    <script type="text/javascript">           $(document).ready(function () {
+        $('#I-II').item({itemtype: 'composite'}, 'II');
+    });
+    document.oncontextmenu = function (e) {
+        {
+            return false;
+        }
+    }    </script>
+</head>
+<body onload="boxresize();">
+<div class="paperTitle">
+    <li class="single">试卷</li>
+    <li><a target="_self" id="mark" href="javascript:void(0)" onclick="ITEM.mark.ColorizeSelection('yellow');">标记题干</a>
+        <a target="_self" id="unmark" href="javascript:void(0)"
+           onclick="ITEM.mark.ColorizeSelection('#DDEBF6')">取消标记</a></li>
+</div>
+<div class="itemGroupTitle"> 三、不定项选择题。每题所设选项中至少有一个正确答案，多选、少选、错选或不选均不得分。本部分含86—100题，每题2分，共30分。</div>
+<div id="I-II" class="itemArea"><p>第 89-91 题</p>
+    <div id="itembox">
+        <div id="leftbox">
+            甲是A公司（国有房地产公司）领导，因私人事务欠蔡某600万元。蔡某让甲还钱，甲提议以A公司在售的商品房偿还债务，蔡某同意。甲遂将公司一套价值600万元的商品房过户给蔡某，并在公司财务账目上记下自己欠公司600万元。三个月后，甲将账作平，至案发时亦未归还欠款。（事实一）A公司有工程项目招标。为让和自己关系好的私营公司老板程某中标，甲刻意安排另外两家公司与程某一起参与竞标。甲让这两家公司和程某分别制作工程预算和标书，但各方约定，若这两家公司中标，就将工程转包给程某。程某最终在A公司预算范围内以最优报价中标。为感谢甲，程某花5000元购买仿制古董赠与甲。甲以为是价值20万元的真品，欣然接受。（事实二）甲曾因公务为A公司垫付各种费用5万元，但由于票据超期，无法报销。为挽回损失，甲指使知情的程某虚构与A公司的劳务合同并虚开发票。甲在合同上加盖公司公章后，找公司财务套取“劳务费”5万元。（事实三）请回答第89—91题。
+        </div>
+        <div id="boxline"></div>
+        <div id="rightbox">
+           
+            <div id="I-90" class="itemArea">
+                <script type="text/javascript">            $(document).ready(function () {
+                    $('#I-90').item({itemtype: 'smultiple'}, '90');
+                });        </script>
+                <div class="itemContext">
+                    <div class="labelClss"><span class="itemName">90.</span> 关于事实二的分析，下列选项正确的是：<span class="itemChoice">&nbsp;</span>
+                    </div>
+                </div>
+                <div class="choiceList">
+                    <div class="choiceContext">
+                        <div class="labelClss">
+                            <div style="float:left;"><input type="checkbox" name="item-90" value="1"/> <span
+                                    class="choiceTitle">A.</span></div>
+                            <div style="margin-left:54px;line-height:120%"><span>程某虽与其他公司串通参与投标，但不构成串通投标罪</span></div>
+                        </div>
+                    </div>
+                    <div class="choiceContext">
+                        <div class="labelClss">
+                            <div style="float:left;"><input type="checkbox" name="item-90" value="2"/> <span
+                                    class="choiceTitle">B.</span></div>
+                            <div style="margin-left:54px;line-height:120%"><span>甲安排程某与他人串通投标，构成串通投标罪的教唆犯</span></div>
+                        </div>
+                    </div>
+                    <div class="choiceContext">
+                        <div class="labelClss">
+                            <div style="float:left;"><input type="checkbox" name="item-90" value="4"/> <span
+                                    class="choiceTitle">C.</span></div>
+                            <div style="margin-left:54px;line-height:120%"><span>程某以行贿的意思向甲赠送仿制古董，构成行贿罪既遂</span></div>
+                        </div>
+                    </div>
+                    <div class="choiceContext">
+                        <div class="labelClss">
+                            <div style="float:left;"><input type="checkbox" name="item-90" value="8"/> <span
+                                    class="choiceTitle">D.</span></div>
+                            <div style="margin-left:54px;line-height:120%"><span>甲以受贿的意思收下程某的仿制古董，构成受贿罪既遂</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+<script type="text/javascript">    function boxresize() {
+    var oBox = document.getElementById("itembox"), oLeft = document.getElementById("leftbox"),
+        oRight = document.getElementById("rightbox"), oLine = document.getElementById("boxline");
+    oLine.onmousedown = function (e) {
+        var disX = (e || event).clientX;
+        oLine.left = oLine.offsetLeft;
+        document.onmousemove = function (e) {
+            var iT = oLine.left + ((e || event).clientX - disX);
+            if (iT > 900) {
+                return false;
+            }
+            if (iT < 200) {
+                return false;
+            }
+            var e = e || window.event, tarnameb = e.target || e.srcElement;
+            var maxT = oBox.clientWight - oLine.offsetWidth;
+            oLine.style.margin = 0;
+            iT < 0 && (iT = 0);
+            iT > maxT && (iT = maxT);
+            var or = oBox.clientWidth - iT;
+            if (or > 100) {
+                oLine.style.left = oLeft.style.width = iT + "px";
+                oRight.style.width = oBox.clientWidth - iT + "px";
+            }
+            return false;
+        };
+        document.onmouseup = function () {
+            document.onmousemove = null;
+            document.onmouseup = null;
+            oLine.releaseCapture && oLine.releaseCapture()
+        };
+        oLine.setCapture && oLine.setCapture();
+        return false;
+    };
+}  </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="image/x-icon" href="img/favicon.ico?version=1.0.7401" rel="shortcut icon" >
+    <link href="css/style.css?version=1.0.7401" rel="stylesheet" type="text/css">
+    <link href="css/item.css?version=1.0.7401" rel="stylesheet" type="text/css">
+    <!--答题端弹出层-->
+    <link rel="stylesheet" type="text/css" href="common/artdialog/ui-dialog.css?version=1.0.7401" />
+
+    <script language="javascript" src="common/js/jquery.min.js?version=1.0.7401"></script>
+
+    <script language="javascript" src="common/artdialog/dialog-min.js?version=1.0.7401"></script>
+    <!-- 解析url -->
+    <script language="javascript" src="js/purl.js?version=1.0.7401"></script>
+    <!-- jquery事件通知 -->
+    <script language="javascript" src="js/pubsub.min.js?version=1.0.7401"></script>
+    <!-- OBT计算器 -->
+    <script language="javascript" src="js/countdown2.js?version=1.0.7401"></script>
+    <!-- OBT基础类库 -->
+    <script language="javascript" src="js/obt.js?version=1.0.7401"></script>
+    <!-- OBT试卷 -->
+    <script language="javascript" src="js/obt.paper.js?version=1.0.7401"></script>
+    <!-- OBT题目向导 -->
+    <script language="javascript" src="js/obt.nav.js?version=1.0.7401"></script>
+    <!-- OBT客户端控制 -->
+    <script language="javascript" src="js/obttest.js?version=1.0.7401"></script>
+    <script language="javascript" src="js/obt.item.js?version=1.0.7401"></script>
+    <script type="text/javascript">
+        var _obt = OBT.storage.getSession("basepath");
+        if(OBT.storage.getSession("isAutoTest")=="Y"){
+            dynamicLoading.js("./js/auto.utils.js");
+            dynamicLoading.js("./js/auto.step.2.js");
+        }
+        function setTheme(th) {
+
+            if(th==1) {
+                $('#layout').css('background-color','#DDEBF6');
+                $('#leftnav').css('background-color','#DDEBF6');
+                $('.subitem a').css('background-color','#DDEBF6');
+            } else if (th==2) {
+                $('#layout').css('background-color','#cae0e0');
+                $('#leftnav').css('background-color','#cae0e0');
+                $('.subitem a').css('background-color','#cae0e0');
+            } else if (th==3) {
+                $('#layout').css('background-color','#f5e9dc');
+                $('#leftnav').css('background-color','#f5e9dc');
+                $('.subitem a').css('background-color','#f5e9dc');
+            } else if (th==4) {
+                $('#layout').css('background-color','#f5dce4');
+                $('#leftnav').css('background-color','#f5dce4');
+                $('.subitem a').css('background-color','#f5dce4');
+            } else if (th==5) {
+                $('#layout').css('background-color','#deddf6');
+                $('#leftnav').css('background-color','#deddf6');
+                $('.subitem a').css('background-color','#deddf6');
+            } else {
+                $('#layout').css('background-color','#DDEBF6');
+                $('#leftnav').css('background-color','#DDEBF6');
+                $('.subitem a').css('background-color','#DDEBF6');
+            }
+
+            OBT.storage.setSession("theme",th);
+        }
+    </script>
+</head>
+<body>
+<div>
+    <div id="layout">
+        <div class="zk"></div>
+        <div id="header">
+            <div class="infoNav">
+                <ul>
+                    <li>
+                        <img id="detailbtn" class = "kspic" style="width:74px;height:96px;border:none;margin-top:-7px;margin-right:10px;cursor:pointer"  src="img/blue.jpg" onerror="this.src='img/blue.jpg'"></img>
+                    </li>
+                    <li>
+                        姓&nbsp;名：<span id="ksxm"></span><br/>
+                        身份证号:&nbsp;<span id="sfzh"></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="clockNav">
+                <ul>
+                    <li class="clockNav_m">
+                        <div>
+                            考试剩余时间:<span id="clock"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <input id="submitbtn" class="submitbutton" name="交卷" type="button" value="交 卷"></li>
+                </ul>
+            </div>
+            <div class="subjectNav">
+                <span id="projectName" class="prname"></span>
+                <br/>
+                <span id="subjectName"></span>
+            </div>
+        </div>
+        <div id="main">
+            <div id="leftnav">
+                <div id="itembar"></div>
+                <div class="submark">
+                    说明：
+                    <br/>
+                    1.题号右方的“*”符号代表该题尚未作答。
+                    <br/>
+                    2.题号右方的“?”符号代表该题做过标记。
+                    <br/>
+                    3.作答的同时系统自动保存答案。
+                </div>
+                <div class="subcal">
+                </div>
+            </div>
+            <div class="middlebar">
+                <input type="button" id="navbtn"/>
+            </div>
+            <div id="container">
+                <div id="question_frame2" style=" "><div id="sjHtml" style="padding-top:10px;padding-left:10px;"></div></div>
+
+                <div id="footer">
+                    <label for="testflag">
+                        <input name="testflag" id="testflag" type="checkbox" style="width:16px;height:16px;vertical-align:middle;"> 标记
+                    </label>
+                    &nbsp;
+                    <button id="prevbtn" name="上一题" type="button">上一题</button>
+                    &nbsp;
+                    第&nbsp;<span id="xtName"></span>&nbsp;题
+                    <span id="xxList">
+
+			</span>
+                    &nbsp;
+                    <button id="nextbtn" name="下一题" type="button">下一题</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dialog" style="display:none">
+    <div class="dialog_main">
+        <div class="dialog_bt"></div>
+        <div class="dialog_img">
+            <img src="./img/ts_2.gif"  />
+        </div>
+        <div class="dialog_content">
+            <li class="dialog_text"><font color=red><span i="content"></span></font>
+            </li>
+            <li>
+                <div i="button" class="dialog_button" id="auto_sbm_btn"></div>
+            </li>
+        </div>
+    </div>
+</div>
+<div id="uploadAnswer" style="display:none;">
+    <div class="up_main">
+        <div class="txttitle">
+            <span class="up_title prname"></span>
+        </div>
+    </div>
+</div>
+<div id="ten_dialog" style="display:none;">
+    <div class="ten_main">
+        <div class="txttitle">
+            <span class="up_title prname"></span>
+        </div>
+        <div class="txtcontent">
+            <div class="ten_content">
+                <span i="content"></span>
+                <div i="button">确定</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dialog_zp" style="display:none">
+    <div class='ks_info' >
+        <div style='height:10px;'></div>
+        <div class='title_txt'>考生照片信息：</div>
+        <img id="hczp" style="float:left;margin-left:50px;margin-top:20px;width:104px;height:132px;" onerror="this.src='img/blue.jpg'"></img>
+        <div style="font-weight:bold;font-size:18px;color:red;margin-left:220px;margin-top:20px;width:250px;height:100px;">请核查你的照片是否正确</div>
+        <div i="button" class="dialog_button" style="margin-left:270px"></div>
+    </div>
+</div>
+<div id="ksinfodialog" style="display:none">
+    <div class='ks_info' >
+        <div style='height:10px;'></div>
+        <div class='title_txt'>考生详细信息：</div>
+        <TABLE align='center' style='margin:0 auto;'>
+            <TBODY>
+            <TR>
+                <TD class='td-photo' rowspan='7'>
+                    <img src='#' class="kspic" width='104' height='132' onerror="this.src='img/blue.jpg'" />
+                </TD>
+                <TH>姓 <SPAN class='block'></SPAN> 名： </TH>
+                <TD> <SPAN id="xm"></SPAN> </TD>
+            </TR>
+            <TR>
+                <TH>性 <SPAN class='block'></SPAN>  别： </TH>
+                <TD> <SPAN id="xb"></SPAN> </TD>
+            </TR>
+            <TR>
+                <TH>准考证号：</TH>
+                <TD> <SPAN id="zkzh"></SPAN> </TD>
+            </TR>
+            <TR>
+                <TH>身份证号：</TH>
+                <TD> <SPAN id="zjbm"></SPAN> </TD>
+            </TR>
+            <TR>
+                <TH>&nbsp;</TH>
+                <TD>
+                    <div i="button" class="dialog_button"></div>
+                </TD>
+            </TR>
+            </TBODY>
+        </TABLE>
+    </div>
+</div>
+</body>
+</html>

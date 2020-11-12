@@ -1,0 +1,28 @@
+﻿
+	<script type="text/javascript">		   
+		$(document).ready(function(){      
+			$('#I-1').item({cancel:true,itemtype:'single'},'1');	  
+			$("#jmsz").html(OBT.storage.getSession("jmsz"));    
+		});    
+		$( window ).unload(function() {      
+			$('#I-1').item('destroy');    
+		});		
+	</script>	
+
+	<div id="sjHtml2" >
+	<div class="paperTitle">	    
+		<li class="single">试卷</li>	    
+		<li>
+			<a target="_self" id="mark" href="javascript:void(0)" onclick="ITEM.mark.ColorizeSelection('yellow');">标记题干</a>	      <a target="_self" id="unmark" href="javascript:void(0)"  onclick="ITEM.mark.ColorizeSelection('#DDEBF6')">取消标记</a>
+		</li>	  
+	</div>	  
+	<div class="itemGroupTitle">一、单项选择题。每题所设选项中只有一个正确答案，多选、错选或不选均不得分。本部分含1—50题，每题1分，共50分。    
+	</div>	  
+	<div id="I-1" class="itemArea" itemcode="1">	    
+	<p>第
+		<span class="itemName">1</span>题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<span id="jmsz" style="font-size:14px;"></span>
+	</p>	    
+	<div class="itemContext">关于不作为犯罪，下列哪一选项是正确的？<span class="itemChoice">&nbsp;</span></div>	    
+	<div class="choiceList"><div class="choiceContext"><div class="labelClss"> <div style="float:left;">			 		<input type="radio" name="item-1" value="1" /><span class="choiceTitle">A.</span></div> 	          <div style="margin-left:54px;line-height:120%"><span>“法无明文规定不为罪”的原则当然适用于不作为犯罪，不真正不作为犯的作为义务必须源于法律的明文规定</span></div>	        </div>		</div>		<div class="choiceContext">		   <div class="labelClss">	          <div style="float:left;">			 		<input type="radio" name="item-1" value="2" />		          	<span class="choiceTitle">B.</span>	          </div> 	          <div style="margin-left:54px;line-height:120%"><span>在特殊情况下，不真正不作为犯的成立不需要行为人具有作为可能性</span></div>	        </div>		</div>		<div class="choiceContext">		   <div class="labelClss">	          <div style="float:left;">			 		<input type="radio" name="item-1" value="4" />		          	<span class="choiceTitle">C.</span>	          </div> 	          <div style="margin-left:54px;line-height:120%"><span>不真正不作为犯属于行为犯，危害结果并非不真正不作为犯的构成要件要素</span></div>	        </div>		</div>		<div class="choiceContext">		   <div class="labelClss">	          <div style="float:left;">			 		<input type="radio" name="item-1" value="8" />		          	<span class="choiceTitle">D.</span>	          </div> 	          <div style="margin-left:54px;line-height:120%"><span>危害公共安全罪、侵犯公民人身权利罪、侵犯财产罪中均存在不作为犯</span></div>	        </div>		</div>	    </div>	  </div>	
+</div>  

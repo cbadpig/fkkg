@@ -1,0 +1,111 @@
+﻿body {
+    font-family: "宋体";
+    background-color: #DDEBF6;
+    font-size: 20px;
+}
+.paperTitle{ background:url(../images/titlebg.gif) repeat-x; width:100%; height:29px;}
+.paperTitle li{ float:left; display:block;font-family:"宋体"}
+.paperTitle li a{ display:block; width:58px; height:21px; background:url(../images/pic_39.jpg) no-repeat; float:left; margin:4px 2px auto 0px; color:#000000; font-size:12px; line-height:21px; text-align:center; text-decoration:none;font-family:"\5FAE\8F6F\96C5\9ED1","\5B8B\4F53";}
+.paperTitle li a:hover{ text-decoration:none}
+.paperTitle .single{float:left; height:29px; margin-right:6px; width:109px; font-size:14px; font-weight:bolder; line-height:29px; background:url(../images/markst.png) no-repeat; text-align:center;font-family:"\5FAE\8F6F\96C5\9ED1","\5B8B\4F53";}
+/*test_bt 大题描述*/
+.itemGroupTitle{ font-weight: normal; color:#333333; font-size:14px; line-height:20px; padding:5px; margin:0px ;margin-left:0px;text-align:left}
+/* 小题名称*/
+.itemName{ margin:1px 2px 1px 2px;font-family:SimHei; FONT-SIZE: 13pt; font-family:"微软雅黑 Light";}
+
+.subItemName{line-height:1.5;margin-right:20px;}
+.itemNum {
+    margin: 13px 0 0 11px;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    font-style: italic;
+    color: #FFF;
+    font-weight: bold;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+}
+#itembox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 0px solid #000;
+    margin: 10px auto;
+    overflow: hidden;
+}
+#boxline {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 40%;
+    height: 100%;
+    width: 6px;
+    overflow: hidden;
+    background: #a1b5fa;
+    cursor: w-resize;
+}
+#leftbox {
+    width: 40%;
+    height: 500px;
+    overflow: auto;
+    float: left
+}
+#rightbox {
+    width: 59%;
+    height: 500px;
+    overflow: auto;
+    float: right
+}
+
+.question p {
+    text-indent: 2em;
+}
+.i-question table {
+    margin-left: 2em;
+    margin-top: 10px;
+}
+.i-question p {
+    text-indent: 2em;
+}
+/* test_content 小题*/
+.itemArea {
+    line-height: 1.5;
+	border-top: 1px solid #9fb7f7;
+	padding: 15px 15px 40px 15px;
+}
+.itemContext {
+  margin:3px 0 0 20px;
+}
+.itemChoice {
+    color: #F00;
+    font-weight: bold;
+    vertical-align: top;
+}
+.choiceContext {
+    margin-top: 1px;
+    margin-left: 2px;
+    margin-bottom: 4px;/*20160229*/
+    margin-right: 2px;
+}
+.choiceList {
+    font-size: 20px;
+    line-height: 20px;
+    padding: 5px 0;
+    margin-top:10px; /*20160229*/
+}
+.choiceTitle {
+  font-weight:bold;
+}
+.clear {
+    clear: both;
+}
+label.labelClss p 
+{
+	padding:0px; margin:0px;display: inline;
+}
+
+label { background-color:#D7D7D7; width:98%; padding:10px; display:inline-block; font-family:"微软雅黑 Light";} /*20160229*/
+
+label.hover { background-color:#fcf7db;}/*20160229*/
+label.Move { background-color:#D7D7D7;}/*20160229*/
